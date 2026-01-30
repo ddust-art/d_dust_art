@@ -1,0 +1,27 @@
+export type NavItem = {
+  label: string;
+  to?: string;
+  anchor?: string;
+  children?: NavItem[];
+};
+
+export const navigation: NavItem[] = [
+  { label: "Home", to: "/" },
+  {
+    label: "Projects",
+    children: [
+      { label: "Outer-Act", to: "/outer-act" },
+      { label: "Moving Stills", to: "/moving-stills" },
+    ],
+  },
+  {
+    label: "Actions & Exhibitions",
+    children: [
+      { label: "Image Gallery", to: "/image-gallery" },
+      { label: "Schedule", anchor: "schedule" },
+    ],
+  },
+  { label: "NFTs", to: "/nft" },
+  { label: "About", anchor: "about" },
+  { label: "Contact", anchor: "footer" },
+];

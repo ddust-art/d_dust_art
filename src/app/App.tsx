@@ -1,0 +1,19 @@
+import { Navbar } from "@/components/navigation/Navbar";
+import { AppRouter } from "@/app/Router";
+import { useScrollToAnchor } from "@/hooks/useScrollToAnchor";
+import Footer from "@/sections/Footer";
+import "@/app/index.css";
+
+export default function App() {
+  useScrollToAnchor(); //applied globally
+
+  return (
+    <>
+      <Navbar />
+      <main className="pt-20">
+        <AppRouter />
+      </main>
+      <Footer />
+    </>
+  );
+}
