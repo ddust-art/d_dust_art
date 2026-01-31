@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { X, ChevronDown } from "lucide-react";
 import { navigation, type NavItem } from "@/data/navigation";
 
 type MobileMenuProps = {
@@ -21,10 +23,10 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
     };
   }, [open, onClose]);
 
-  if (!open) return null;
+  //if (!open) return null;
 
   const toggle = (label: string) => {
-    setExpanded(expanded === label ? null : label);
+    setExpanded((prev) => (prev === label ? null : label));
   };
 
   const renderItem = (item: NavItem) => {
@@ -33,7 +35,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
       const isOpen = expanded === item.label;
 
       return (
-        <div key={item.label} className="border-b">
+        <div key={item.label} className="border-b border-black/10">
           <button
             onClick={() => {
               toggle(item.label);
@@ -42,14 +44,29 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
             aria-expanded={isOpen}
           >
             <span>{item.label}</span>
-            <span className="text-sm">{isOpen ? "-" : "+"}</span>
+            <motion.span
+              animate={{ rotate: isOpen ? 180 : 0 }}
+              transition={{ duration: 0.25 }}
+            >
+              <ChevronDown size={18} />
+            </motion.span>
           </button>
 
-          {isOpen && (
-            <div className="pl-4 pb-3 space-y-3 text-sm">
-              {item.children.map(renderItem)}
-            </div>
-          )}
+          <AnimatePresence initial={false}>
+            {isOpen && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className="overflow-hidden pl-4"
+              >
+                <div className="pl-4 pb-3 space-y-3 text-sm">
+                  {item.children.map(renderItem)}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       );
     }
@@ -86,25 +103,41 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
   };
 
   return (
-    <>
-      {/* Backdrop */}
-      <div className="fixed inset-0 z-40 bg-black/40" onClick={onClose} />
+    <AnimatePresence>
+      {open && (
+        <>
+          {/* Backdrop */}
+          <motion.div
+            className="fixed inset-0 z-40 bg-black/40"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+          />
 
-      {/* Panel */}
-      <aside className="fixed inset-y-0 right-0 z-50 w-80 bg-white p-6 transform transition-transform duration-300 translate-x-0">
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 text-xl"
-          aria-label="Close menu"
-        >
-          x
-        </button>
+          {/* Panel */}
+          <motion.aside
+            className="fixed inset-y-0 right-0 z-50 w-80 bg-white p-6"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "spring", stiffness: 260, damping: 24 }}
+          >
+            <button
+              onClick={onClose}
+              className="absolute top-4 right-4"
+              aria-label="Close menu"
+            >
+              <X size={22} />
+            </button>
 
-        <nav className="mt-10 text-base">
-          {/* we’ll inject navigation links later */}
-          {navigation.map(renderItem)}
-        </nav>
-      </aside>
-    </>
+            <nav className="mt-12 text-base">
+              {/* we’ll inject navigation links later */}
+              {navigation.map(renderItem)}
+            </nav>
+          </motion.aside>
+        </>
+      )}
+    </AnimatePresence>
   );
 }

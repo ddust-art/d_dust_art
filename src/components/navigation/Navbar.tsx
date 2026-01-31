@@ -1,6 +1,7 @@
 import { navigation } from "@/data/navigation";
 import { useState } from "react";
 import { MobileMenu } from "./MobileMenu";
+import { Menu } from "lucide-react";
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -58,7 +59,7 @@ export function Navbar() {
           onClick={() => setMobileOpen(true)}
           aria-label="Open menu"
         >
-          ☰
+          <Menu size={24} />
         </button>
 
         <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} />
