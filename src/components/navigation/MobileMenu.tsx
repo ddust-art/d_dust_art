@@ -29,12 +29,11 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
 
   //to highlight anchor links (only when pathname === "/" AND hash matches)
 
-  const baseLink =
-    "block py-4 border-b border-black/10 text-right font-semi-bold active:text-[#f26537]";
+  const baseLink = "block py-4 font-semibold text-right active:text-[#f26537]";
 
-  const childText = "text-sm";
-  const activeClass = "text-blue-500";
-  const inactiveClass = "text-black";
+  const childText = "text-sm ";
+  const activeClass = "text-[#0018ff] font-black"; //dark blue thick
+  const inactiveClass = "text-black font-semibold";
 
   const renderItem = (item: NavItem, isChild = false) => {
     //Parent with children
@@ -42,7 +41,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
       const isOpen = expanded === item.label;
 
       return (
-        <div key={item.label} className="border-b border-black/10">
+        <div key={item.label} className="font-semibold">
           <button
             onClick={() => {
               toggle(item.label);

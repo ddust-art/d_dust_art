@@ -1,62 +1,157 @@
-import { navigation } from "@/data/navigation";
-import { useState } from "react";
+import { navigation, type NavItem } from "@/data/navigation";
+import { useEffect, useRef, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import { ChevronDown } from "lucide-react";
 import { MobileMenu } from "./MobileMenu";
 import { Menu } from "lucide-react";
 
 export function Navbar() {
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (!navRef.current?.contains(e.target as Node)) {
+        setOpenDropdown(null);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  }, []);
+
+  // Close dropdown on route change
+  useEffect(() => {
+    setOpenDropdown(null);
+  }, [location.pathname]);
+
+  const activeClass = "text-[#0018ff] font-black";
+  const inactiveClass = "text-black";
+
+  const renderItem = (item: NavItem) => {
+    // Parent with children
+    if (item.children) {
+      const isOpen = openDropdown === item.label;
+
+      return (
+        <div key={item.label} className="relative">
+          <button
+            onClick={() => setOpenDropdown(isOpen ? null : item.label)}
+            aria-expanded={isOpen}
+            className="flex items-center gap-1 font-medium hover:text-[#f26537]"
+          >
+            {item.label}
+            <ChevronDown
+              size={16}
+              className={`transition-transform ${isOpen ? "rotate-180" : ""}
+              `}
+            />
+          </button>
+
+          {isOpen && (
+            <div
+              className="absolute right-0 mt-3 w-48 rounded-md border bg-white shadow-lg"
+              role="menu"
+            >
+              <ul className="py-2">
+                {item.children.map((child) => (
+                  <li key={child.label}>{renderChild(child)}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    // Anchor link
+    if (item.anchor) {
+      return (
+        <a
+          key={item.label}
+          href={`/#${item.anchor}`}
+          className={`font-medium hover:text-[#f26537] ${inactiveClass}`}
+        >
+          {item.label}
+        </a>
+      );
+    }
+
+    // Route link
+    if (item.to) {
+      return (
+        <NavLink
+          key={item.label}
+          to={item.to}
+          className={({ isActive }) =>
+            `font-medium hover:text-[#f26537] ${
+              isActive ? activeClass : inactiveClass
+            }`
+          }
+        >
+          {item.label}
+        </NavLink>
+      );
+    }
+
+    return null;
+  };
+
+  const renderChild = (item: NavItem) => {
+    // Anchor child
+    if (item.anchor) {
+      return (
+        <a
+          href={`/#${item.anchor}`}
+          className="block px-4 py-2 text-sm hover:bg-black/5 hover:text-[#f26537]"
+        >
+          {item.label}
+        </a>
+      );
+    }
+
+    // Route child
+    if (item.to) {
+      return (
+        <NavLink
+          to={item.to}
+          className={({ isActive }) =>
+            `block px-4 py-2 text-sm hover:bg-black/5 ${
+              isActive ? "text-[#0018ff] font-black" : "text-black"
+            }`
+          }
+        >
+          {item.label}
+        </NavLink>
+      );
+    }
+
+    return null;
+  };
 
   return (
-    <header className="border-b">
-      <div className="p-4 flex items-center justify-between">
+    <header className="fixed top-0 z-50 w-full bg-white border-b">
+      <div
+        ref={navRef}
+        className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6"
+      >
         {/* Logo */}
-        <div className="font-bold">D-DUST</div>
+        <NavLink to="/" className={"font-bold text-lg"}>
+          D-DUST
+        </NavLink>
 
-        {/* Desktop navigation */}
-        <nav className="hidden md:flex gap-6 text-sm">
-          {navigation.map((item) => {
-            const hasChildren = Boolean(item.children?.length);
-
-            return (
-              <div key={item.label} className="relative group">
-                {/* Parent Item */}
-                {hasChildren ? (
-                  <span className="cursor-default opacity-80 group-hover:opacity-100 transition">
-                    {item.label}
-                  </span>
-                ) : (
-                  <a
-                    href={item.anchor ? `/#${item.anchor}` : item.to}
-                    className="opacity-80 hover:opacity-100 transition"
-                  >
-                    {item.label}
-                  </a>
-                )}
-
-                {/* Dropdown */}
-                {hasChildren && (
-                  <div className="absolute top-full left-0 mt-2 hidden group-hover:block">
-                    <div className="min-w-[180px] bg-white/90 backdrop-blur border border-black/10 rounded-sm shadow-sm">
-                      {item.children!.map((child) => (
-                        <a
-                          key={child.label}
-                          href={child.anchor ? `/#${child.anchor}` : child.to}
-                          className="block px-4 py-2 text-sm opacity-80 hover:opacity-100 hover:bg-black/5 transition"
-                        >
-                          {child.label}
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            );
-          })}
+        {/* Desktop nav */}
+        <nav className="hidden md:flex items-center gap-8">
+          {navigation.map(renderItem)}
         </nav>
-        {/* Mobile menu trigger */}
+        {/* Mobile trigger */}
         <button
-          className="md:hidden text-2xl"
           onClick={() => setMobileOpen(true)}
+          className="md:hidden text-xl"
           aria-label="Open menu"
         >
           <Menu size={24} />
