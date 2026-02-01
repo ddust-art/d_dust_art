@@ -23,13 +23,20 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
     };
   }, [open, onClose]);
 
-  //if (!open) return null;
-
   const toggle = (label: string) => {
     setExpanded((prev) => (prev === label ? null : label));
   };
 
-  const renderItem = (item: NavItem) => {
+  //to highlight anchor links (only when pathname === "/" AND hash matches)
+
+  const baseLink =
+    "block py-4 border-b border-black/10 text-right font-semi-bold active:text-[#f26537]";
+
+  const childText = "text-sm";
+  const activeClass = "text-blue-500";
+  const inactiveClass = "text-black";
+
+  const renderItem = (item: NavItem, isChild = false) => {
     //Parent with children
     if (item.children) {
       const isOpen = expanded === item.label;
@@ -40,7 +47,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
             onClick={() => {
               toggle(item.label);
             }}
-            className="flex w-full items-center justify-between py-4 text-left"
+            className={`flex w-full items-center justify-end gap-2 py-4 text-right active:text-[#f26537]`}
             aria-expanded={isOpen}
           >
             <span>{item.label}</span>
@@ -59,10 +66,10 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
                 animate={{ height: "auto", opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
-                className="overflow-hidden pl-4"
+                className="overflow-hidden pr-4"
               >
-                <div className="pl-4 pb-3 space-y-3 text-sm">
-                  {item.children.map(renderItem)}
+                <div className="pb-3 space-y-3">
+                  {item.children.map((child) => renderItem(child, true))}
                 </div>
               </motion.div>
             )}
@@ -78,7 +85,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
           key={item.label}
           href={`/#${item.anchor}`}
           onClick={onClose}
-          className="block py-4 border-b"
+          className={`${baseLink} ${isChild ? childText : ""}`}
         >
           {item.label}
         </a>
@@ -92,7 +99,9 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
           key={item.label}
           to={item.to}
           onClick={onClose}
-          className="block py-4 border-b"
+          className={({ isActive }) =>
+            `${baseLink} ${isChild ? childText : ""} ${isActive ? activeClass : inactiveClass} `
+          }
         >
           {item.label}
         </NavLink>
@@ -131,9 +140,8 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
               <X size={22} />
             </button>
 
-            <nav className="mt-12 text-base">
-              {/* we’ll inject navigation links later */}
-              {navigation.map(renderItem)}
+            <nav className="mt-12">
+              {navigation.map((item) => renderItem(item))}
             </nav>
           </motion.aside>
         </>
