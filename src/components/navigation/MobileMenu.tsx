@@ -136,7 +136,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
               className="absolute top-4 right-4"
               aria-label="Close menu"
             >
-              <X size={22} />
+              <X size={22} color="red" />
             </button>
 
             <nav className="mt-12">

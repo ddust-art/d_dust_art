@@ -7,6 +7,7 @@ export type NavItem = {
 
 export const navigation: NavItem[] = [
   { label: "Home", to: "/" },
+  { label: "About", anchor: "about" },
   {
     label: "Projects",
     children: [
@@ -22,6 +23,5 @@ export const navigation: NavItem[] = [
     ],
   },
   { label: "NFTs", to: "/nft" },
-  { label: "About", anchor: "about" },
   { label: "Contact", anchor: "footer" },
 ];
