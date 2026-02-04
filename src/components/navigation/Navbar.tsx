@@ -151,51 +151,52 @@ export function Navbar() {
   };
 
   return (
-    <motion.header
-      initial={{ y: -120, opacity: 0 }}
-      animate={{
-        y: 0,
-        opacity: 1,
-        backgroundColor: scrolled ? "rgba(0,0,0,0.2)" : "rgba(0,0,0,0)",
-      }}
-      transition={{ duration: 0.35, ease: "easeOut" }}
-      className={`fixed top-0 z-50 w-full pointer-events-none ${scrolled ? "backdrop-blur-md" : ""}`}
-    >
-      <motion.div
-        ref={navRef}
+    <>
+      <motion.header
+        initial={{ y: -120, opacity: 0 }}
         animate={{
-          paddingTop: scrolled ? 12 : 20,
-          paddingBottom: scrolled ? 12 : 28,
+          y: 0,
+          opacity: 1,
+          //backgroundColor: scrolled ? "rgba(0,0,0,0.2)" : "rgba(0,0,0,0)",
         }}
         transition={{ duration: 0.35, ease: "easeOut" }}
-        className="pointer-events-auto flex items-start justify-between px-6 md:px-10"
+        className={`fixed top-0 z-50 w-full pointer-events-none ${scrolled ? "backdrop-blur-md" : ""}`}
       >
-        {/* Logo */}
-        <NavLink to="/" className={"relative z-20 "}>
-          <motion.img
-            src={logo}
-            alt="D-DUST Logo"
-            className="w-auto origin-left"
-            animate={{ height: scrolled ? logoCollapsed : logoExpanded }}
-            transition={{ duration: 0.35, ease: "easeOut" }}
-          />
-        </NavLink>
-
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8 ">
-          {navigation.map(renderItem)}
-        </nav>
-        {/* Mobile trigger */}
-        <button
-          onClick={() => setMobileOpen(true)}
-          className="md:hidden text-xl"
-          aria-label="Open menu"
+        <motion.div
+          ref={navRef}
+          animate={{
+            paddingTop: scrolled ? 12 : 20,
+            paddingBottom: scrolled ? 12 : 28,
+          }}
+          transition={{ duration: 0.35, ease: "easeOut" }}
+          className="pointer-events-auto flex items-start justify-between px-6 md:px-10"
         >
-          <Menu size={24} color="white" />
-        </button>
+          {/* Logo */}
+          <NavLink to="/" className={"relative z-20 "}>
+            <motion.img
+              src={logo}
+              alt="D-DUST Logo"
+              className="w-auto origin-left"
+              animate={{ height: scrolled ? logoCollapsed : logoExpanded }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+            />
+          </NavLink>
 
-        <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} />
-      </motion.div>
-    </motion.header>
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-8 ">
+            {navigation.map(renderItem)}
+          </nav>
+          {/* Mobile trigger */}
+          <button
+            onClick={() => setMobileOpen(true)}
+            className="md:hidden text-xl"
+            aria-label="Open menu"
+          >
+            <Menu size={24} color="white" />
+          </button>
+        </motion.div>
+      </motion.header>
+      <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} />
+    </>
   );
 }

@@ -29,11 +29,12 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
 
   //to highlight anchor links (only when pathname === "/" AND hash matches)
 
-  const baseLink = "block py-4 font-semibold text-right active:text-[#f26537]";
+  const baseLink =
+    "block py-4 text-right font-semibold transition-colors duration-200 active:text-[#f26537]";
 
-  const childText = "text-sm ";
+  const childText = "text-white text-sm";
   const activeClass = "text-[#0018ff] font-black"; //dark blue thick
-  const inactiveClass = "text-black font-semibold";
+  const inactiveClass = "text-white font-semibold";
 
   const renderItem = (item: NavItem, isChild = false) => {
     //Parent with children
@@ -41,12 +42,12 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
       const isOpen = expanded === item.label;
 
       return (
-        <div key={item.label} className="font-semibold">
+        <div key={item.label} className="text-white font-semibold">
           <button
             onClick={() => {
               toggle(item.label);
             }}
-            className={`flex w-full items-center justify-end gap-2 py-4 text-right active:text-[#f26537]`}
+            className={`flex w-full items-center justify-end gap-2 py-4  text-right active:text-[#f26537]`}
             aria-expanded={isOpen}
           >
             <span>{item.label}</span>
@@ -84,7 +85,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
           key={item.label}
           href={`/#${item.anchor}`}
           onClick={onClose}
-          className={`${baseLink} ${isChild ? childText : ""}`}
+          className={`text-white ${baseLink} ${isChild ? childText : ""}`}
         >
           {item.label}
         </a>
@@ -115,17 +116,17 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
       {open && (
         <>
           {/* Backdrop */}
-          <motion.div
+          {/*<motion.div
             className="fixed inset-0 z-40 bg-black/40"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-          />
+          />*/}
 
           {/* Panel */}
           <motion.aside
-            className="fixed inset-y-0 right-0 z-50 w-80 bg-white p-6"
+            className="fixed inset-y-0 right-0 z-50 w-auto backdrop-blur-xl p-6"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
@@ -136,7 +137,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
               className="absolute top-4 right-4"
               aria-label="Close menu"
             >
-              <X size={22} color="red" />
+              <X size={22} color="white" />
             </button>
 
             <nav className="mt-12">
