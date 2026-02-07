@@ -172,7 +172,7 @@ export function Navbar() {
           className="pointer-events-auto flex items-start justify-between px-6 md:px-10"
         >
           {/* Logo */}
-          <NavLink to="/" className={"relative z-20 "}>
+          <NavLink to="/" className={"relative z-20 mr-8"}>
             <motion.img
               src={logo}
               alt="D-DUST Logo"

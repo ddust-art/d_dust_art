@@ -1,0 +1,80 @@
+import { useEffect, useState } from "react";
+
+const WORDS = ["INERACTIVE", "ELECTRONIC", "STREET ART", "VIDEO", "MAPPING"];
+
+const TYPING_SPEED = 70;
+const PAUSE_AFTER_TYPED = 1200;
+const PAUSE_AFTER_DELETED = 1400;
+const GLITCH_DURATION = 600;
+
+export default function TypewriterText() {
+  const [wordIndex, setWordIndex] = useState(0);
+  const [displayed, setDisplayed] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const [isGlitching, setIsGlitching] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+
+  useEffect(() => {
+    if (isPaused) return;
+
+    const currentWord = WORDS[wordIndex];
+    let timeout: number;
+
+    if (!isDeleting) {
+      //typing
+      setIsHidden(false);
+
+      timeout = window.setTimeout(() => {
+        const next = currentWord.slice(0, displayed.length + 1);
+        setDisplayed(next);
+
+        if (next === currentWord) {
+          setIsPaused(true);
+
+          // 👇 DRAMATIC GLITCH MOMENT
+          setTimeout(() => {
+            setIsGlitching(true);
+
+            setTimeout(() => {
+              setIsGlitching(false);
+              setIsDeleting(true);
+              setIsPaused(false);
+            }, GLITCH_DURATION);
+          }, PAUSE_AFTER_TYPED);
+        }
+      }, TYPING_SPEED);
+    } else {
+      //deleting
+      timeout = window.setTimeout(() => {
+        const next = currentWord.slice(0, displayed.length - 1);
+        setDisplayed(next);
+
+        if (next === "") {
+          setIsHidden(true);
+
+          setIsPaused(true);
+          setTimeout(() => {
+            setIsDeleting(false);
+            setWordIndex((i) => (i + 1) % WORDS.length);
+            setIsPaused(false);
+          }, PAUSE_AFTER_DELETED);
+        }
+      }, TYPING_SPEED);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [displayed, isDeleting, isPaused, wordIndex]);
+
+  if (isHidden) return null;
+
+  return (
+    <div
+      className={`font-digital text-white/90 drop-shadow-[0_0_12px_rgba(255,255,255,0.35)]
+ text-6xl md:text-9xl tracking-widest ${isGlitching ? "glitch" : ""}`}
+    >
+      {displayed}
+      <span className="inline-block w-[0.6ch] animate-pulse">|</span>
+    </div>
+  );
+}

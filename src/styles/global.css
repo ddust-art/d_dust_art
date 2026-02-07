@@ -1,0 +1,42 @@
+:root {
+  --orange: #f2b537;
+  --light-grey: #7a7a7a;
+  --light-purple: #ac22f2;
+  --dark-purple: #7b1fa6;
+  --purple-sky: #04001b;
+  --tech-green: #16f587;
+  --dark-grey: #161617;
+  --middle-blue: #2577ba;
+  --space-blue: #0018ff;
+  --sky-blue: #2577ba;
+  --complementar-blue-orange: #0545a6;
+  --nft-dark-blue: #000523;
+}
+
+.glitch {
+  position: relative;
+  animation: glitch 150ms linear;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow:
+      5px 0 var(--tech-green),
+      -5px 0 var(--light-purple);
+    transform: translate(0);
+  }
+  30% {
+    transform: translate(0px, 5px);
+  }
+  60% {
+    transform: translate(0px, -4px);
+    text-shadow:
+      -7px 0 var(--tech-green),
+      7px 0 var(--light-purple);
+  }
+
+  100% {
+    transform: translate(0);
+    text-shadow: none;
+  }
+}
