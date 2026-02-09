@@ -4,7 +4,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import { MobileMenu } from "./MobileMenu";
 import { Menu } from "lucide-react";
-import logo from "@/assets/DDUST Digital Street_LOGO_White.svg";
+import logo from "@/assets/vector/DDUST Digital Street_LOGO_White.svg";
 import { motion } from "framer-motion";
 
 export function Navbar() {

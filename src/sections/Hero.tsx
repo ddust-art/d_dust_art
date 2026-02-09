@@ -1,4 +1,4 @@
-import video from "@/assets/OA_HOME_HEADER_EDIT_BW_2.mp4";
+import video from "@/assets/video/OA_HOME_HEADER_EDIT_BW_2.mp4";
 import { ChevronsDown } from "lucide-react";
 import { motion } from "framer-motion";
 import TypewriterText from "@/components/animations/TypewriterText";

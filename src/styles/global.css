@@ -21,8 +21,8 @@
 @keyframes glitch {
   0% {
     text-shadow:
-      5px 0 var(--tech-green),
-      -5px 0 var(--light-purple);
+      2px 0 var(--tech-green),
+      -2px 0 white;
     transform: translate(0);
   }
   30% {
@@ -31,8 +31,8 @@
   60% {
     transform: translate(0px, -4px);
     text-shadow:
-      -7px 0 var(--tech-green),
-      7px 0 var(--light-purple);
+      -3px 0 var(--tech-green),
+      3px 0 white;
   }
 
   100% {
