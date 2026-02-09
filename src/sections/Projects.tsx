@@ -2,7 +2,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="w-full py-24 bg-gradient-to-b from-black to-light-grey text-black"
+      className="w-full py-24 bg-gradient-to-b from-black to-purple-sky text-black"
     >
       {/* Intro / text */}
       <div className="relative max-w-3xl mx-auto px-6 text-center">
@@ -52,7 +52,7 @@ export default function Projects() {
       <div className="mt-16 flex justify-center">
         <a
           href="/image-gallery"
-          className="inline-block border border-black px-8 py-3 uppercase tracking-wide text-sm hover:bg-black hover:text-white transition"
+          className="inline-block border border-white px-8 py-3 uppercase tracking-wide text-sm text-white hover:bg-dark-purple hover:border-dark-purple transition"
         >
           Image Gallery
         </a>

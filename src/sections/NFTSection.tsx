@@ -1,6 +1,6 @@
 export default function NFTs() {
   return (
-    <section id="nfts" className="w-full py-32 text-black bg-nft-dark-blue">
+    <section id="nfts" className="w-full py-0 text-black bg-nft-dark-blue">
       <div
         className="
           relative
@@ -37,13 +37,13 @@ export default function NFTs() {
               border
               border-white
               px-10
-              py-3
+              p-3
               uppercase
               tracking-wide
               text-sm
               text-white
-              hover:bg-dust-orange
-              hover:border-dust-orange
+              hover:bg-sky-blue 
+              hover:border-sky-blue
               transition
             "
           >

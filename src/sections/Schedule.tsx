@@ -9,7 +9,10 @@ import { scheduleEvents } from "@/data/scheduleData";
 
 export default function Schedule() {
   return (
-    <section id="schedule" className="py-24 bg-white text-black">
+    <section
+      id="schedule"
+      className="py-24 bg-gradient-to-b from-purple-sky to-nft-dark-blue text-white"
+    >
       <h2 className="text-center text-tech-green text-4xl font-bold mb-16">
         Schedule
       </h2>
@@ -21,17 +24,9 @@ export default function Schedule() {
               <AccordionItem
                 key={index}
                 value={`event-${index}`}
-                className="border border-black"
+                className="border border-white"
               >
-                <AccordionTrigger
-                  onClick={(e) => {
-                    e.currentTarget.scrollIntoView({
-                      behavior: "smooth",
-                      block: "start",
-                    });
-                  }}
-                  className="hover:no-underline px-6 py-5"
-                >
+                <AccordionTrigger className="hover:no-underline px-6 py-5">
                   <div className="flex items-center gap-6 text-left">
                     {/* Date */}
                     <div className="text-center min-w-[70px]">
