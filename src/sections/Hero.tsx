@@ -1,4 +1,3 @@
-import video from "@/assets/video/OA_HOME_HEADER_EDIT_BW_2.mp4";
 import { ChevronsDown } from "lucide-react";
 import { motion } from "framer-motion";
 import TypewriterText from "@/components/animations/TypewriterText";
@@ -14,13 +13,31 @@ export default function Hero() {
       {/* Background video */}
       <video
         className="absolute inset-0 h-full w-full object-cover"
-        src={video}
         autoPlay
         loop
         muted
         playsInline
-      />
-      {/* Optional overlay for contrast */}
+        preload="metadata"
+      >
+        {/* Mobile first */}
+        <source
+          src="/src/assets/video/hero-mobile.webm"
+          type="video/webm"
+          media="(max-width: 768px)"
+        />
+
+        {/* Desktop */}
+        <source
+          src="/src/assets/video/hero-desktop.webm"
+          type="video/webm"
+          media="(min-width: 769px)"
+        />
+
+        {/* Fallback - Safari */}
+        <source src="/src/assets/video/hero-fallback.mp4" type="video/mp4" />
+      </video>
+
+      {/* Overlay for contrast */}
       <div className="absolute inset-0 bg-black/40" />
 
       {/* Hero content */}

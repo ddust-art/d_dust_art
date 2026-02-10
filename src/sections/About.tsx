@@ -1,4 +1,5 @@
-import aboutVideoMp4 from "@/assets/video/about-dust.mp4";
+import aboutVideoWebm from "@/assets/video/about_dust.webm";
+import aboutVideoMp4 from "@/assets/video/about-fallback.mp4";
 //import aboutPoster from "@/assets/video/about-dust-poster.jpg"; // fallback poster
 import aboutImage from "@/assets/image/ddust_about.jpg";
 
@@ -15,10 +16,10 @@ export default function About() {
           playsInline
           //poster={aboutPoster}
         >
+          <source src={aboutVideoWebm} type="video/webm" />
           <source src={aboutVideoMp4} type="video/mp4" />
-          {/* Add later: .webm source when available */}
         </video>
-        <div className="absolute inset-0 bg-black/50"></div>
+        {/* <div className="absolute inset-0 bg-black/50"></div> */}
       </div>
 
       {/* Section heading */}
@@ -27,7 +28,7 @@ export default function About() {
       </h2>
 
       {/* Two-column layout */}
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start px-6 lg:px-0">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start px-12">
         {/* Left: image */}
         <img
           src={aboutImage}
@@ -37,32 +38,43 @@ export default function About() {
         />
 
         {/* Right: text & quote */}
-        <div className="space-y-6 text-lg leading-relaxed">
+        <div className="space-y-6 text-lg leading-relaxed text-justify">
           <p>
-            <strong className="font-semibold">D-DUST</strong> is a media artist
-            focused on contrasting the interaction between real individuals and
-            digital characters in public or virtual environments.
+            <strong className="font-semibold text-2xl text-dust-orange">
+              Technology
+            </strong>{" "}
+            is a means, but also a reflection of our own personality. The desire
+            to go further and faster, defend ourselves more securely, strike
+            more powerfully. It transforms our limited human abilities into
+            superpowers previously only seen in fiction, in the performances of
+            mythical gods or religious books.
           </p>
 
           <p>
-            Since the beginning of the 21st century, relationships have been
-            drawn out from public places toward online social environments. What
-            once seemed like a thriving achievement of Web 2.0 later turned into
-            a nightmare of data harvesting, privacy invasion, and surveillance.
+            That is why we revere it; it represents the expansion of our powers
+            and brings us closer to the gods. We carry tech-religious symbols in
+            our pockets. Our church is our daily use of the internet. Our new
+            deity is AI.
           </p>
 
           <p>
-            Outer-Act aims, with a simple and primitive use of AI, to test faith
-            in technology and reflect on relevant themes within public and
-            virtual spaces.
+            However, powers demand responsibility and the fragile human morality
+            is shaken by contradictions. Will technology be our salvation or our
+            doom? Without pretentious aims to find the exact answer, but rather
+            to challenge human behavior, this is what guides{" "}
+            <strong className="font-semibold text-2xl text-dust-orange">
+              D-DUST's
+            </strong>{" "}
+            art.
           </p>
-
-          <blockquote className="border-l-4 border-white pl-4 italic text-2xl">
+          {/* 
+            <blockquote className="border-l-4 border-white pl-4 italic text-2xl">
             “The medium is the message.”
             <span className="block mt-2 text-lg font-semibold">
               — Marshall McLuhan
             </span>
           </blockquote>
+          */}
         </div>
       </div>
     </section>

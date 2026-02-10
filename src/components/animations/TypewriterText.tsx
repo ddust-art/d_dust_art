@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 
-const WORDS = ["ELECTRONIC", "STREET ART", "INERACTIVE", "VIDEO", "MAPPING"];
+const WORDS = [
+  "ELECTRIFIED\nSTREET ART",
+  "INERACTIVE\nPROVOCATIONS",
+  "VIDEO\nACTIONS",
+  "RESSURRECTIVE\nMAPPING",
+];
 
 const TYPING_SPEED = 70;
 const PAUSE_AFTER_TYPED = 1200;
@@ -70,11 +75,17 @@ export default function TypewriterText() {
 
   return (
     <div
-      className={`font-digital text-[#16f587]/90 drop-shadow-[0_0_12px_rgba(22,245,135,0.85)]
+      className={`font-digital text-center text-tech-green/90 drop-shadow-[0_0_12px_rgba(22,245,135,0.85)]
  text-6xl md:text-9xl tracking-widest ${isGlitching ? "glitch" : ""}`}
     >
-      {displayed}
-      <span className="inline-block w-[1ch] animate-pulse">|</span>
+      {displayed.split("\n").map((line, i, arr) => (
+        <span key={i} className="block">
+          {line}
+          {i === arr.length - 1 && (
+            <span className="inline-block w-[0.6ch] animate-pulse">|</span>
+          )}
+        </span>
+      ))}
     </div>
   );
 }

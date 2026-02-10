@@ -1,32 +1,20 @@
 export default function Newsletter() {
   return (
-    <section className="relative w-full min-h-[50vh] flex items-center justify-center overflow-hidden bg-almost-black">
-      {/* Decorative background shapes */}
+    <section className="relative w-full min-h-[50vh] flex items-center justify-center bg-almost-black overflow-hidden">
+      {/* Decorative background shape */}
       <div
         className="
-          absolute -top-50 -left-36
+          absolute h-100 w-100 -top-40 -left-50
           w-96 h-96
-          bg-dark-purple/20
+          bg-white/20
           rounded-full
           blur-3xl
         "
         aria-hidden
       />
-      <div
-        className="
-          absolute -top-50 -right-48
-          w-96 h-96
-          bg-dark-purple/20
-          
-          rounded-full
-          blur-3xl
-        "
-        aria-hidden
-      />
-
       {/* Content */}
       <div className="relative z-10 w-full max-w-3xl px-6 text-center">
-        <h2 className="text-xl md:text-2xl font-semibold tracking-wide text-white mb-4">
+        <h2 className="text-xl md:text-2xl font-semibold tracking-wide text-dust-orange mb-4">
           Keep updated about news, projects, actions and exhibitions
         </h2>
 
