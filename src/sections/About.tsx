@@ -1,6 +1,6 @@
 import aboutVideoWebm from "@/assets/video/about_dust.webm";
 import aboutVideoMp4 from "@/assets/video/about-fallback.mp4";
-//import aboutPoster from "@/assets/video/about-dust-poster.jpg"; // fallback poster
+import aboutPoster from "@/assets/image/about-dust-poster.jpg"; // fallback poster
 import aboutImage from "@/assets/image/ddust_about.jpg";
 
 export default function About() {
@@ -14,12 +14,12 @@ export default function About() {
           loop
           muted
           playsInline
-          //poster={aboutPoster}
+          poster={aboutPoster}
         >
           <source src={aboutVideoWebm} type="video/webm" />
           <source src={aboutVideoMp4} type="video/mp4" />
         </video>
-        {/* <div className="absolute inset-0 bg-black/50"></div> */}
+        <div className="absolute inset-0 bg-black/20"></div>
       </div>
 
       {/* Section heading */}
