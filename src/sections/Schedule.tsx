@@ -11,7 +11,7 @@ export default function Schedule() {
   return (
     <section
       id="schedule"
-      className="py-24 bg-gradient-to-b from-purple-sky to-nft-dark-blue text-white"
+      className="py-24 pb-32 bg-gradient-to-b from-purple-sky to-nft-dark-blue text-white"
     >
       <h2 className="text-center text-tech-green text-4xl font-bold mb-16">
         Schedule
@@ -24,20 +24,24 @@ export default function Schedule() {
               <AccordionItem
                 key={index}
                 value={`event-${index}`}
-                className="border border-white"
+                className="border-bottom border-light-purple"
               >
                 <AccordionTrigger className="hover:no-underline px-6 py-5">
                   <div className="flex items-center gap-6 text-left">
                     {/* Date */}
                     <div className="text-center min-w-[70px]">
-                      <div className="text-2xl font-bold">{event.day}</div>
+                      <div className="text-2xl text-dust-orange font-bold">
+                        {event.day}
+                      </div>
                       <div className="uppercase text-sm">{event.month}</div>
-                      <div className="text-xs">{event.year}</div>
+                      <div className="text-xs text-light-grey">
+                        {event.year}
+                      </div>
                     </div>
 
                     {/* Title */}
                     <div>
-                      <div className="text-sm uppercase opacity-70">
+                      <div className="text-sm text-dust-orange uppercase">
                         {event.location}
                       </div>
                       <h4 className="text-lg font-semibold">{event.title}</h4>
@@ -45,7 +49,7 @@ export default function Schedule() {
                   </div>
                 </AccordionTrigger>
 
-                <AccordionContent className="px-6 pb-6 text-base leading-relaxed">
+                <AccordionContent className="px-6 pb-6 text-base text-light-grey leading-relaxed">
                   {event.description}
                 </AccordionContent>
               </AccordionItem>

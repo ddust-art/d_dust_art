@@ -1,13 +1,25 @@
 export default function NFTs() {
   return (
-    <section id="nfts" className="w-full py-0 text-black bg-nft-dark-blue">
+    <section
+      id="nfts"
+      className="relative w-full py-0 text-black bg-nft-dark-blue"
+    >
+      {/* Radial Gradient Overlay */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+          bg-[radial-gradient(circle_at_top,_#000523_60%,_#000000_100%)]
+        "
+      />
       <div
         className="
           relative
           max-w-full
           mx-auto
           p-6
-          bg-[url('@/assets/image/OA_Background_NFTs.jpg')]
+          bg-[url('@/assets/image/NFTsection_BG_Pic.webp')]
           bg-no-repeat
           bg-center
           bg-contain

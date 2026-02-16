@@ -1,4 +1,19 @@
+import * as React from "react";
+import Autoplay from "embla-carousel-autoplay";
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
 export default function Projects() {
+  const plugin = React.useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: false }),
+  );
+
   return (
     <section
       id="projects"
@@ -9,52 +24,154 @@ export default function Projects() {
         <h2 className="text-4xl text-tech-green font-bold mb-6">Projects</h2>
 
         <p className="text-lg text-white leading-relaxed">
-          Similar to happenings, actions are artistic interventions and work to
-          interrupt the pedestrians routine. Unaware of what is about to happen,
-          their movements trigger interactive characters which are projected on
-          their way. These performances also occur in the form of street
-          exhibitions, where location and time are previously{" "}
-          <a
-            href="#Schedule"
-            className="underline underline-offset-4 hover:opacity-70 transition"
-          >
-            scheduled
-          </a>{" "}
-          and publicly notified.
+          Whether in the form of{" "}
+          <strong className="font-bold text-dust-orange">actions</strong>, such
+          as unexpected and interactive happenings, or in the form of{" "}
+          <strong className="font-bold text-dust-orange">exhibitions</strong>,
+          such as pure public presentations, the works performed on the streets
+          “de-automate” routine perception and provoke multiple and varied
+          feelings ranging from amusement to aversion.
         </p>
       </div>
 
-      {/* Image grid */}
-      <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
-        <img
-          src="https://cdn.prod.website-files.com/61b894d706346e5f3ed4003d/61c4bd178083e21ce1083d20_Card%2001_MSI_V3.jpg"
-          alt=""
-          loading="lazy"
-          className="w-full h-auto object-cover"
-        />
+      {/* Carousel */}
+      <div className="mt-6 max-w-6xl mx-auto px-6">
+        <Carousel
+          opts={{
+            loop: true,
+            align: "start",
+          }}
+          plugins={[plugin.current]}
+          className="w-full relative" //relative to overlay arrows
+          onMouseEnter={() => {
+            plugin.current?.stop();
+          }}
+          onMouseLeave={() => {
+            plugin.current?.play();
+          }}
+        >
+          {/* Navigation Arrows */}
+          <CarouselPrevious
+            onMouseDown={(e) => e.stopPropagation()} //avoid clicking the link of <a> below
+            className="absolute -left-6 top-1/2 -translate-y-1/2 z-20 h-12 w-12 flex items-center justify-center
+              bg-black/30 backdrop-blur-sm border-none text-white hover:bg-white/60 hover:text-black transition"
+          />
 
-        <img
-          src="https://cdn.prod.website-files.com/61b894d706346e5f3ed4003d/61c4bd177f4aa9e3140961ee_Card%2002_Frankfurt.jpg"
-          alt=""
-          loading="lazy"
-          className="w-full h-auto object-cover"
-        />
+          <CarouselNext
+            onMouseDown={(e) => e.stopPropagation()}
+            className="absolute -right-6 top-1/2 -translate-y-1/2 z-20 h-12 w-12 flex items-center justify-center
+              bg-black/30 backdrop-blur-sm border-none text-white hover:bg-white/60 hover:text-black transition "
+          />
 
-        <img
-          src="https://cdn.prod.website-files.com/61b894d706346e5f3ed4003d/61c4bd17be592e3439b93d64_Card%2003_Rathausbru%CC%88cke.jpg"
-          alt=""
-          loading="lazy"
-          className="w-full h-auto object-cover"
-        />
+          <CarouselContent>
+            {/* Item 1 */}
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3 basis-full">
+              <a href="/outer-act" className="block relative group">
+                <img
+                  src="src/assets/image/Card_01_MSI_V3.jpg"
+                  alt="Project Outer-Act"
+                  className="w-full aspect-[4/3] object-cover grayscale transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-[1.03] active:grayscale-0 
+
+"
+                />
+
+                {/* SVG Title */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <img
+                    src="src/assets/vector/Outer-Act_Logo_GREEN_WEB.svg"
+                    alt="Logo Outer-Act"
+                    className="w-4/5"
+                  />
+                </div>
+              </a>
+            </CarouselItem>
+            {/* Item 2 */}
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3 basis-full">
+              <a href="/outer-act" className="block relative group">
+                <img
+                  src="src/assets/image/Project_Moving_Stills_image.jpg"
+                  alt="Project Moving Stills"
+                  className="w-full aspect-[4/3] object-cover grayscale transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-[1.03] active:grayscale-0"
+                />
+
+                {/* SVG Title */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <img
+                    src="src/assets/image/Projects_Moving Stills_Title.png"
+                    alt="Logo Outer-Act"
+                    className="w-full"
+                  />
+                </div>
+              </a>
+            </CarouselItem>
+            {/* Item 3 */}
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3 basis-full">
+              <a href="/outer-act" className="block relative group">
+                <img
+                  src="src/assets/image/Projects_1_Mai.jpg"
+                  alt="Project Outer-Act"
+                  className="w-full aspect-[4/3] object-cover grayscale transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-[1.03] active:grayscale-0"
+                />
+
+                {/* SVG Title */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <img
+                    src="src/assets/vector/Projects_1 May_Title.svg"
+                    alt="Logo Outer-Act"
+                    className="w-full"
+                  />
+                </div>
+              </a>
+            </CarouselItem>
+            {/* Item 4 */}
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3 basis-full">
+              <a href="/outer-act" className="block relative group">
+                <img
+                  src="src/assets/image/Projects_Street_VJ.webp"
+                  alt="Project Outer-Act"
+                  className="w-full aspect-[4/3] object-cover grayscale transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-[1.03] active:grayscale-0"
+                />
+
+                {/* SVG Title */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <img
+                    src="src/assets/image/Projects_Street_VJ_Title.webp"
+                    alt="Logo Outer-Act"
+                    className="w-full"
+                  />
+                </div>
+              </a>
+            </CarouselItem>
+            {/* Item 5 */}
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3 basis-full">
+              <a href="/outer-act" className="block relative group">
+                <img
+                  src="src/assets/image/Projects_Funkhaus.webp"
+                  alt="Project Outer-Act"
+                  className="w-full aspect-[4/3] object-cover grayscale transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-[1.03] active:grayscale-0"
+                />
+
+                {/* SVG Title */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <img
+                    src="src/assets/image/Projects_Funkhaus_Title.webp"
+                    alt="Logo Outer-Act"
+                    className="w-full"
+                  />
+                </div>
+              </a>
+            </CarouselItem>
+          </CarouselContent>
+        </Carousel>
       </div>
 
       {/* CTA */}
       <div className="mt-16 flex justify-center">
         <a
-          href="/image-gallery"
+          href="/projects"
           className="inline-block border border-white px-8 py-3 uppercase tracking-wide text-sm text-white hover:bg-dark-purple hover:border-dark-purple transition"
         >
-          Image Gallery
+          Find out more!
         </a>
       </div>
     </section>

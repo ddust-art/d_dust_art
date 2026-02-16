@@ -43,25 +43,24 @@ export default function About() {
             <strong className="font-semibold text-2xl text-dust-orange">
               Technology
             </strong>{" "}
-            is a means, but also a reflection of our own personality. The desire
-            to go further and faster, defend ourselves more securely, strike
-            more powerfully. It transforms our limited human abilities into
-            superpowers previously only seen in fiction, in the performances of
-            mythical gods or religious books.
+            is a means, but also a reflection of our own personality. It
+            represents the desire to go further and faster, defend ourselves
+            more securely, strike more powerfully. It transforms our limited
+            human abilities into superpowers previously only seen in fiction, in
+            the performances of mythical gods or religious books.
           </p>
 
           <p>
             That is why we revere it; it represents the expansion of our powers
-            and brings us closer to the gods. We carry tech-religious symbols in
-            our pockets. Our church is our daily use of the internet. Our new
-            deity is AI.
+            and brings us closer to the gods. We carry sacred objects in our
+            pockets. The internet is our daily church. Our new deity is AI.
           </p>
 
           <p>
             However, powers demand responsibility and the fragile human morality
             is shaken by contradictions. Will technology be our salvation or our
             doom? Without pretentious aims to find the exact answer, but rather
-            to challenge human behavior, this is what guides{" "}
+            to challenge values, this is what guides{" "}
             <strong className="font-semibold text-2xl text-dust-orange">
               D-DUST's
             </strong>{" "}

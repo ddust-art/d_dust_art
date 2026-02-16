@@ -6,7 +6,7 @@ export const scheduleEvents = [
     location: "Berlin, Museum Island",
     title: "Humbolt Forum – Spree Margins",
     description:
-      'Debut of the "Street Broker". The new character is inspired by homelessness and the increasing rent prices in the city. Come and join this night to learn more about the gentrification phenomenon. Starting at 20:30.',
+      'Debut of the "Street Broker". The new character is inspired by homelessness and the increasing rent prices. Come and join this evening and learn more about the gentrification phenomenon. Starting at 20:30.',
   },
   {
     day: "14",
@@ -15,7 +15,7 @@ export const scheduleEvents = [
     location: "Frankfurt am Main",
     title: "Luminale – Biennial for light art and urban design",
     description:
-      'The Black Box will be on wheels during the Frankfurter Luminale light festival. When the sun goes down, search for the "Deliverer" at the Willy-Brandt-Platz.',
+      'The Black Box will be on wheels during the Frankfurter Luminale light festival. When the sun goes down, search for  "Deliverer" at the Willy-Brandt-Platz.',
   },
   {
     day: "07",
