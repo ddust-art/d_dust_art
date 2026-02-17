@@ -7,6 +7,8 @@ export default function Footer() {
         w-full
         text-white
         overflow-hidden
+        text-center
+        md:text-left
       "
     >
       {/* Background image placeholder */}

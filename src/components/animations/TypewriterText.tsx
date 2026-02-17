@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const WORDS = [
   "ELECTRIFIED\nSTREET ART",
-  "INERACTIVE\nPROVOCATIONS",
+  "INTERACTIVE\nPROVOCATIONS",
   "VIDEO\nACTIONS",
   "RESSURRECTIVE\nMAPPING",
 ];
