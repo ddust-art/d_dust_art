@@ -10,10 +10,11 @@ export const navigation: NavItem[] = [
   { label: "About", anchor: "about" },
   {
     label: "Projects",
-    children: [
-      { label: "Outer-Act", to: "/outer-act" },
-      { label: "Moving Stills", to: "/moving-stills" },
-    ],
+    to: "/projects",
+    // children: [
+    //   { label: "Outer-Act", to: "/outer-act" },
+    //   { label: "Moving Stills", to: "/moving-stills" },
+    // ],
   },
   {
     label: "Actions & Exhibitions",

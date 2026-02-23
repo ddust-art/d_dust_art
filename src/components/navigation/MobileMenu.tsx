@@ -30,11 +30,11 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
   //to highlight anchor links (only when pathname === "/" AND hash matches)
 
   const baseLink =
-    "block py-4 text-right font-semibold transition-colors duration-200 active:text-[#f26537]";
+    "block py-4 text-right font-semibold transition-colors duration-200 active:text-dust-orange";
 
-  const childText = "text-white text-sm";
-  const activeClass = "text-[#0018ff] font-black"; //dark blue thick
-  const inactiveClass = "text-white font-semibold";
+  const childText = "text-white/60 text-sm font-light";
+  const activeClass = "text-light-purple";
+  const inactiveClass = "text-white/60 font-semibold";
 
   const renderItem = (item: NavItem, isChild = false) => {
     //Parent with children
@@ -42,12 +42,12 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
       const isOpen = expanded === item.label;
 
       return (
-        <div key={item.label} className="text-white font-semibold">
+        <div key={item.label} className="text-white/60 font-semibold">
           <button
             onClick={() => {
               toggle(item.label);
             }}
-            className={`flex w-full items-center justify-end gap-2 py-4  text-right active:text-[#f26537]`}
+            className={`flex w-full items-center justify-end gap-2 py-4  text-right active:text-dust-orange`}
             aria-expanded={isOpen}
           >
             <span>{item.label}</span>
@@ -85,7 +85,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
           key={item.label}
           href={`/#${item.anchor}`}
           onClick={onClose}
-          className={`text-white ${baseLink} ${isChild ? childText : ""}`}
+          className={`text-white/60 ${baseLink} ${isChild ? childText : ""}`}
         >
           {item.label}
         </a>

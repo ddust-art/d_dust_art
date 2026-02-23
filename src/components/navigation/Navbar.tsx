@@ -47,8 +47,8 @@ export function Navbar() {
 
   //Links style states
   const baseLink = "font-medium transition-colors duration-200";
-  const inactiveClass = "text-white/60 hover:text-white";
-  const activeClass = "text-[#0018ff] hover:text-white";
+  const inactiveClass = "text-white/60 hover:text-dust-orange";
+  const activeClass = "text-light-purple hover:text-dust-orange";
 
   //Detect Desktop vc Mobile
   const isDesktop = window.matchMedia("(min-width: 768px)").matches;
@@ -122,7 +122,7 @@ export function Navbar() {
       return (
         <a
           href={`/#${item.anchor}`}
-          className="block text-sm text-white/60 transition-colors hover:text-white"
+          className="block text-sm text-white/60 transition-colors hover:text-dust-orange"
         >
           {item.label}
         </a>
@@ -137,8 +137,8 @@ export function Navbar() {
           className={({ isActive }) =>
             `block text-sm transition-colors ${
               isActive
-                ? "text-[#0018ff] hover:text-white"
-                : "text-white/60 hover:text-white"
+                ? "text-light-purple hover:text-dust-orange"
+                : "text-white/60 hover:text-dust-orange"
             }`
           }
         >
