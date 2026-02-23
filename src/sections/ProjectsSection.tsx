@@ -1,5 +1,6 @@
 import * as React from "react";
 import Autoplay from "embla-carousel-autoplay";
+import { ArrowRight } from "lucide-react";
 
 import {
   Carousel,
@@ -169,9 +170,9 @@ export default function Projects() {
       <div className="mt-16 flex justify-center">
         <a
           href="/projects"
-          className="inline-block border border-white px-8 py-3 uppercase tracking-wide text-sm text-white hover:bg-dark-purple hover:border-dark-purple transition"
+          className="inline-flex items-center gap-2 border border-white px-8 py-3 uppercase tracking-wide text-sm text-white hover:bg-dark-purple hover:border-dark-purple transition"
         >
-          Find out more!
+          <span>See Projects</span> <ArrowRight className="w-4 h-4" />
         </a>
       </div>
     </section>
