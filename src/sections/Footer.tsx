@@ -136,7 +136,7 @@ export default function Footer() {
                       rel="noreferrer"
                       className="footer-link"
                     >
-                      X
+                      Twitter
                     </a>
                   </li>
                 </ul>
