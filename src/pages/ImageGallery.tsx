@@ -12,38 +12,15 @@ import {
 import { motion } from "framer-motion";
 import galleryCover from "@/assets/image/gallery/gallery-cover.jpg";
 
-const images = [
-  {
-    src: "src/assets/image/gallery/outer-act_fkm_01.jpg",
-    title: "Urban Fragment I",
-  },
-  {
-    src: "src/assets/image/gallery/outer-act_fkm_03.jpg",
-    title: "Urban Fragment II",
-  },
-  {
-    src: "src/assets/image/gallery/outer-act_fkm_04.jpg",
-    title: "Urban Fragment III",
-  },
-  {
-    src: "src/assets/image/gallery/outer-act_fkm_16.jpg",
-    title: "Urban Fragment IV",
-  },
-  {
-    src: "src/assets/image/gallery/outer-act_fkm_18.jpg",
-    title: "Urban Fragment V",
-  },
-  {
-    src: "src/assets/image/gallery/outer-act_fkm_21.jpg",
-    title: "Urban Fragment VI",
-  },
-];
+import { images1, images2, images3 } from "@/data/imageGalleries";
 
 export default function ImageGallery() {
   const [open, setOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [activeImages, setActiveImages] = useState(images1);
 
-  const handleOpen = (index: number) => {
+  const handleOpen = (images: typeof images1, index: number) => {
+    setActiveImages(images);
     setSelectedIndex(index);
     setOpen(true);
   };
@@ -86,7 +63,7 @@ export default function ImageGallery() {
         </p>
       </section>
 
-      {/* GALLERY SECTION */}
+      {/* GALLERY SECTIONS */}
       <section className="max-w-6xl mx-auto px-6 pb-24">
         <h2 className="text-2xl text-tech-green md:text-3xl font-semibold uppercase tracking-wide">
           FEAR AND LOATHING IN FRANKFURT
@@ -101,12 +78,12 @@ export default function ImageGallery() {
 
         {/* MOSAIC GRID */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {images.map((image, index) => (
+          {images1.map((image, index) => (
             <motion.div
               key={index}
               whileHover={{ scale: 1.03 }}
               className="relative cursor-pointer overflow-hidden rounded-2xl"
-              onClick={() => handleOpen(index)}
+              onClick={() => handleOpen(images1, index)}
             >
               <img
                 src={image.src}
@@ -118,7 +95,73 @@ export default function ImageGallery() {
         </div>
       </section>
 
-      {/* LIGHTBOX / CAROUSEL */}
+      <section className="max-w-6xl mx-auto px-6 pb-24">
+        <h2 className="text-2xl text-tech-green md:text-3xl font-semibold uppercase tracking-wide">
+          LIGHTING IN THE AGE OF ENLIGHTEMENT
+        </h2>
+        <div className="mt-2 text-sm text-white/40 tracking-widest">2019</div>
+
+        <p className="my-6 text-white/70 text-lg leading-relaxed text-left text-justify">
+          Berlin&apos;s Museum Island is home to centuries of history and
+          culture, from the grand Babylon Gates to modernist paintings of the
+          19th century. Beneath the ancient colonnades lining the Spree River,
+          the Black Box was installed, challenging the historical architecture
+          with its cutting-edge street art.
+        </p>
+
+        {/* MOSAIC GRID */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {images2.map((image, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.03 }}
+              className="relative cursor-pointer overflow-hidden rounded-2xl"
+              onClick={() => handleOpen(images2, index)}
+            >
+              <img
+                src={image.src}
+                alt={image.title}
+                className="object-cover w-full h-60"
+              />
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <section className="max-w-6xl mx-auto px-6 pb-24">
+        <h2 className="text-2xl text-tech-green md:text-3xl font-semibold uppercase tracking-wide">
+          BORN UNDER THE BRIDGE
+        </h2>
+        <div className="mt-2 text-sm text-white/40 tracking-widest">2019</div>
+
+        <p className="my-6 text-white/70 text-lg leading-relaxed text-left text-justify">
+          Outer-Act made its debut at the Berliner Rathausbrücke in 2019 with a
+          series of early experiments. While it wasn&apos;t yet interactive and
+          simply looped a video, the character on display captivated passersby,
+          making the installation feel surprisingly engaging despite its initial
+          simplicity.
+        </p>
+
+        {/* MOSAIC GRID */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {images3.map((image, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.03 }}
+              className="relative cursor-pointer overflow-hidden rounded-2xl"
+              onClick={() => handleOpen(images3, index)}
+            >
+              <img
+                src={image.src}
+                alt={image.title}
+                className="object-cover w-full h-60"
+              />
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* LIGHTBOX/CAROUSEL*/}
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent
           className="
@@ -135,7 +178,7 @@ export default function ImageGallery() {
             className="relative w-full"
           >
             <CarouselContent>
-              {images.map((image, index) => (
+              {activeImages.map((image, index) => (
                 <CarouselItem key={index}>
                   <div className="flex items-center justify-center h-[65vh] sm:h-[75vh]">
                     <img
@@ -148,7 +191,6 @@ export default function ImageGallery() {
               ))}
             </CarouselContent>
 
-            {/* MOBILE POSITION */}
             <CarouselPrevious
               className="
           left-2 sm:-left-6
