@@ -9,8 +9,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { motion } from "framer-motion";
 import galleryCover from "@/assets/image/gallery/gallery-cover.jpg";
+import GallerySection from "@/components/gallery/GallerySection";
 
 import { images1, images2, images3 } from "@/data/imageGalleries";
 
@@ -64,113 +64,61 @@ export default function ImageGallery() {
       </section>
 
       {/* GALLERY SECTIONS */}
-      <section className="max-w-6xl mx-auto px-6 pb-24">
-        <h2 className="text-2xl text-tech-green md:text-3xl font-semibold uppercase tracking-wide">
-          FEAR AND LOATHING IN FRANKFURT
-        </h2>
-        <div className="mt-2 text-sm text-white/40 tracking-widest">2020</div>
-
-        <p className="my-6 text-white/70 text-lg leading-relaxed text-left text-justify">
-          Due to the first COVID-19 lockdown in Germany, the project Outer-Act
+      <GallerySection
+        title="FEAR AND LOATHING IN FRANKFURT"
+        year="2020"
+        description="Due to the first COVID-19 lockdown in Germany, the project Outer-Act
           wandered through an unusually deserted Frankfurt after the light art
-          festival Luminale was canceled at the last minute.
-        </p>
+          festival Luminale was canceled at the last minute. The crisis became
+          the focus of political concerns and affected the foundations of global
+          economies."
+        images={images3}
+        onImageClick={handleOpen}
+      />
 
-        {/* MOSAIC GRID */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {images1.map((image, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.03 }}
-              className="relative cursor-pointer overflow-hidden rounded-2xl"
-              onClick={() => handleOpen(images1, index)}
+      <GallerySection
+        title="LIGHTING THE AGE OF ENLIGHTEMENT"
+        year="2019"
+        description={
+          <>
+            Conceived as a “Sanctuary of Arts and Science” by Friedrich Wilhelm
+            IV of Prussia, the{" "}
+            <a
+              href="https://www.museumsinsel-berlin.de/en/buildings/overview-of-the-buildings/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-light-purple underline hover:opacity-80 transition-opacity"
             >
-              <img
-                src={image.src}
-                alt={image.title}
-                className="object-cover w-full h-60"
-              />
-            </motion.div>
-          ))}
-        </div>
-      </section>
+              Museum Island
+            </a>{" "}
+            in Berlin, embodies the ideals of the Enlightenment. Beneath its
+            colonnade, Outer-Act introduces new ideals through light, casting a
+            contemporary layer onto the architecture and creating an
+            intersection between art and technology.
+          </>
+        }
+        images={images2}
+        onImageClick={handleOpen}
+      />
 
-      <section className="max-w-6xl mx-auto px-6 pb-24">
-        <h2 className="text-2xl text-tech-green md:text-3xl font-semibold uppercase tracking-wide">
-          LIGHTING IN THE AGE OF ENLIGHTEMENT
-        </h2>
-        <div className="mt-2 text-sm text-white/40 tracking-widest">2019</div>
-
-        <p className="my-6 text-white/70 text-lg leading-relaxed text-left text-justify">
-          Berlin&apos;s Museum Island is home to centuries of history and
-          culture, from the grand Babylon Gates to modernist paintings of the
-          19th century. Beneath the ancient colonnades lining the Spree River,
-          the Black Box was installed, challenging the historical architecture
-          with its cutting-edge street art.
-        </p>
-
-        {/* MOSAIC GRID */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {images2.map((image, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.03 }}
-              className="relative cursor-pointer overflow-hidden rounded-2xl"
-              onClick={() => handleOpen(images2, index)}
-            >
-              <img
-                src={image.src}
-                alt={image.title}
-                className="object-cover w-full h-60"
-              />
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      <section className="max-w-6xl mx-auto px-6 pb-24">
-        <h2 className="text-2xl text-tech-green md:text-3xl font-semibold uppercase tracking-wide">
-          BORN UNDER THE BRIDGE
-        </h2>
-        <div className="mt-2 text-sm text-white/40 tracking-widest">2019</div>
-
-        <p className="my-6 text-white/70 text-lg leading-relaxed text-left text-justify">
-          Outer-Act made its debut at the Berliner Rathausbrücke in 2019 with a
-          series of early experiments. While it wasn&apos;t yet interactive and
-          simply looped a video, the character on display captivated passersby,
-          making the installation feel surprisingly engaging despite its initial
-          simplicity.
-        </p>
-
-        {/* MOSAIC GRID */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {images3.map((image, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.03 }}
-              className="relative cursor-pointer overflow-hidden rounded-2xl"
-              onClick={() => handleOpen(images3, index)}
-            >
-              <img
-                src={image.src}
-                alt={image.title}
-                className="object-cover w-full h-60"
-              />
-            </motion.div>
-          ))}
-        </div>
-      </section>
+      <GallerySection
+        title="BORN UNDER THE BRIDGE"
+        year="2019"
+        description="Outer-Act debuted in 2019 at Berliner Rathausbrücke through a series of early experiments. Though not yet equipped with motion-detection devices and based on a simple looping sequence, the character on display captured the attention of passersby, revealing signs of interaction even in its initial form."
+        images={images1}
+        onImageClick={handleOpen}
+      />
 
       {/* LIGHTBOX/CAROUSEL*/}
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent
           className="
-      bg-transparent 
-      border-none 
-      w-full 
-      max-w-5xl 
-      px-4 sm:px-6
-      [&>button]:text-white
+          bg-tranparent
+          border-none 
+          w-full 
+          max-w-5xl 
+          px-4 sm:px-6
+          [&>button]:text-white
     "
         >
           <Carousel
