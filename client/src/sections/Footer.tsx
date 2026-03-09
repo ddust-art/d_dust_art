@@ -85,7 +85,7 @@ export default function Footer() {
                     </a>
                   </li>
                   <li>
-                    <a href="#nfts" className="footer-link">
+                    <a href="/#footer" className="footer-link">
                       NFTs
                     </a>
                   </li>
