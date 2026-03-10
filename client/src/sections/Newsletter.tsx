@@ -12,6 +12,7 @@ export default function Newsletter() {
   const [loading, setLoading] = useState(false);
 
   async function handleSubmit(e: React.FormEvent) {
+    if (loading) return; // prevent double submissions
     e.preventDefault();
 
     setLoading(true);
@@ -33,7 +34,9 @@ export default function Newsletter() {
       });
 
       if (res.ok) {
-        setStatus("Successfully subscribed!");
+        setStatus(
+          "Thank you! Please check your email to confirm your subscription.",
+        );
         setEmail("");
         setFname("");
         setLname("");
@@ -190,13 +193,24 @@ export default function Newsletter() {
               onChange={(e) => setType(e.target.value)}
               className="bg-transparent border border-white/30 px-4 py-3 text-white focus:outline-none focus:border-white"
             >
+              <option className="text-black" value="artist">
+                Artist
+              </option>
               <option className="text-black" value="fan">
                 Art fan
               </option>
-              <option value="institution">Art institution</option>
-              <option value="investor">Art investor</option>
-              <option value="press">Press</option>
-              <option value="other">Other</option>
+              <option className="text-black" value="institution">
+                Art institution
+              </option>
+              <option className="text-black" value="investor">
+                Art investor
+              </option>
+              <option className="text-black" value="press">
+                Press
+              </option>
+              <option className="text-black" value="other">
+                Other
+              </option>
             </select>
           </div>
 

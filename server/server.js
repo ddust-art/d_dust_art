@@ -10,7 +10,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const BREVO_API = "https://api.brevo.com/v3/contacts";
+const BREVO_API = "https://api.brevo.com/v3/contacts/doubleOptinConfirmation";
 const API_KEY = process.env.BREVO_API_KEY;
 
 app.post("/api/subscribe", async (req, res) => {
@@ -27,7 +27,10 @@ app.post("/api/subscribe", async (req, res) => {
           INSTITUTION: inst,
           CATEGORY: type,
         },
-        listIds: [2], //Brevo's newsletter list ID
+
+        includeListIds: [2], //Brevo's newsletter list ID
+        templateId: 1,
+        redirectionUrl: "http://localhost:5173/newsletter-confirmed",
         updateEnabled: true,
       },
       {
