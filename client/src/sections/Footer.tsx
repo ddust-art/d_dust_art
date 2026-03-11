@@ -65,12 +65,12 @@ export default function Footer() {
                 </h3>
                 <ul className="space-y-2">
                   <li>
-                    <a href="#about" className="footer-link">
+                    <a href="/#about" className="footer-link">
                       About
                     </a>
                   </li>
                   <li>
-                    <a href="#projects" className="footer-link">
+                    <a href="/projects" className="footer-link">
                       Projects
                     </a>
                   </li>
@@ -80,7 +80,7 @@ export default function Footer() {
                     </a>
                   </li>
                   <li>
-                    <a href="#schedule" className="footer-link">
+                    <a href="/#schedule" className="footer-link">
                       Schedule
                     </a>
                   </li>

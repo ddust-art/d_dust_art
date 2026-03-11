@@ -40,3 +40,7 @@
     text-shadow: none;
   }
 }
+
+.footer-link {
+  @apply text-white transition hover:text-dust-orange;
+}

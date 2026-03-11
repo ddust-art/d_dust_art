@@ -7,7 +7,7 @@ export default function Newsletter() {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [inst, setInst] = useState("");
-  const [type, setType] = useState("fan");
+  const [type, setType] = useState("artist");
   const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -35,7 +35,7 @@ export default function Newsletter() {
 
       if (res.ok) {
         setStatus(
-          "Thank you! Please check your email to confirm your subscription.",
+          "Thank you!\nPlease check your email to confirm your subscription.\nCheck the trash or spam bins in case it's not in your main box.",
         );
         setEmail("");
         setFname("");
@@ -230,7 +230,7 @@ export default function Newsletter() {
 
           <div className="md:col-span-2 text-center">
             <motion.p
-              className="text-dust-orange text-sm"
+              className="whitespace-pre-line text-dust-orange text-sm" //whitespace-pre-line (Tailwind) tells the browser to respect \n
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
             >

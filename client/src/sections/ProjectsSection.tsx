@@ -67,7 +67,7 @@ export default function Projects() {
           <CarouselContent>
             {/* Item 1 */}
             <CarouselItem className="md:basis-1/2 lg:basis-1/3 basis-full">
-              <a href="/outer-act" className="block relative group">
+              <a href="/projects#outer-act" className="block relative group">
                 <img
                   src="src/assets/image/Card_01_MSI_V3.jpg"
                   alt="Project Outer-Act"
@@ -88,7 +88,10 @@ export default function Projects() {
             </CarouselItem>
             {/* Item 2 */}
             <CarouselItem className="md:basis-1/2 lg:basis-1/3 basis-full">
-              <a href="/outer-act" className="block relative group">
+              <a
+                href="/projects#moving-stills"
+                className="block relative group"
+              >
                 <img
                   src="src/assets/image/Project_Moving_Stills_image.jpg"
                   alt="Project Moving Stills"
@@ -107,10 +110,10 @@ export default function Projects() {
             </CarouselItem>
             {/* Item 3 */}
             <CarouselItem className="md:basis-1/2 lg:basis-1/3 basis-full">
-              <a href="/outer-act" className="block relative group">
+              <a href="/projects#mayday" className="block relative group">
                 <img
                   src="src/assets/image/Projects_1_Mai.jpg"
-                  alt="Project Outer-Act"
+                  alt="Project MayDay"
                   className="w-full aspect-[4/3] object-cover grayscale transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-[1.03] active:grayscale-0"
                 />
 
@@ -126,10 +129,10 @@ export default function Projects() {
             </CarouselItem>
             {/* Item 4 */}
             <CarouselItem className="md:basis-1/2 lg:basis-1/3 basis-full">
-              <a href="/outer-act" className="block relative group">
+              <a href="/projects#street-vj" className="block relative group">
                 <img
                   src="src/assets/image/Projects_Street_VJ.webp"
-                  alt="Project Outer-Act"
+                  alt="Project Street-VJ"
                   className="w-full aspect-[4/3] object-cover grayscale transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-[1.03] active:grayscale-0"
                 />
 
@@ -145,10 +148,13 @@ export default function Projects() {
             </CarouselItem>
             {/* Item 5 */}
             <CarouselItem className="md:basis-1/2 lg:basis-1/3 basis-full">
-              <a href="/outer-act" className="block relative group">
+              <a
+                href="/projects#funkhaus-mapping"
+                className="block relative group"
+              >
                 <img
                   src="src/assets/image/Projects_Funkhaus.webp"
-                  alt="Project Outer-Act"
+                  alt="Project Funkhaus Mapping"
                   className="w-full aspect-[4/3] object-cover grayscale transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-[1.03] active:grayscale-0"
                 />
 

@@ -34,7 +34,7 @@ export default function ProjectsContainer() {
 
       {/* Projects Grid */}
       {/* Moving Stills */}
-      <section className="w-full bg-nft-dark-blue">
+      <section id="moving-stills" className="w-full bg-nft-dark-blue">
         <div className="max-w-6xl mx-auto px-6 pt-24 pb-12 md:pt-32 pb-16 space-y-40">
           <article>
             {/* Title + Year */}
@@ -118,7 +118,7 @@ export default function ProjectsContainer() {
         </div>
       </section>
       {/* Outer-Act */}
-      <section className="w-full bg-nft-dark-blue">
+      <section id="outer-act" className="w-full bg-nft-dark-blue">
         <div className="max-w-6xl mx-auto px-6 pt-12 pb-12 md:pt-16 pb-16 space-y-40">
           <article>
             {/* Title + Year */}
@@ -203,7 +203,7 @@ export default function ProjectsContainer() {
         </div>
       </section>
       {/* MayDay Berlin */}
-      <section className="w-full bg-nft-dark-blue">
+      <section id="mayday" className="w-full bg-nft-dark-blue">
         <div className="max-w-6xl mx-auto px-6 pt-12 pb-12 md:pt-16 pb-16 space-y-40">
           <article>
             {/* Title + Year */}
@@ -276,7 +276,7 @@ export default function ProjectsContainer() {
         </div>
       </section>
       {/* Street VJ */}
-      <section className="w-full bg-nft-dark-blue">
+      <section id="street-vj" className="w-full bg-nft-dark-blue">
         <div className="max-w-6xl mx-auto px-6 pt-12 pb-12 md:pt-16 pb-16 space-y-40">
           <article>
             {/* Title + Year */}
@@ -351,7 +351,8 @@ export default function ProjectsContainer() {
           </article>
         </div>
       </section>
-      <section className="w-full bg-nft-dark-blue">
+      {/* Funkhaus Mapping */}
+      <section id="funkhaus-mapping" className="w-full bg-nft-dark-blue">
         <div className="max-w-6xl mx-auto px-6 pt-12 pb-12 md:pt-16 pb-16 space-y-40">
           <article>
             {/* Title + Year */}
