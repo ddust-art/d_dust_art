@@ -2,49 +2,19 @@ export default function Footer() {
   return (
     <footer
       id="footer"
-      className="
-        relative
-        w-full
-        text-white
-        overflow-hidden
-        text-center
-        md:text-left
-      "
+      className="relative w-full text-white overflow-hidden text-center md:text-left"
     >
-      {/* Background image placeholder */}
+      {/* Background image */}
       <div
-        className="
-              absolute
-              inset-0
-              bg-[url('@/assets/image/bg_footer.jpg')]
-              bg-cover
-              bg-center
-              
-            "
+        className="absolute inset-0 bg-[url('@/assets/image/bg_footer.jpg')] bg-cover bg-center"
         aria-hidden="true"
       />
-      {/* Content overlay box */}
+
+      {/* Content overlay */}
       <div className="relative z-10 px-6 py-12">
-        <div
-          className="
-            mx-auto max-w-6xl
-            rounded-md
-            bg-black/20
-            backdrop-blur-sm
-            p-10 md:p-10
-          "
-        >
-          {/* Content */}
+        <div className="mx-auto max-w-6xl rounded-md bg-black/20 backdrop-blur-sm p-10 md:p-10">
           <div className="relative max-w-7xl mx-auto p-6">
-            <div
-              className="
-                grid
-                grid-cols-1
-                gap-12
-                md:grid-cols-2
-                lg:grid-cols-4
-              "
-            >
+            <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-5">
               {/* Contact */}
               <div>
                 <h3 className="mb-4 text-sm uppercase tracking-widest text-gray-300">
@@ -108,7 +78,6 @@ export default function Footer() {
                       Instagram
                     </a>
                   </li>
-
                   <li>
                     <a
                       href="https://www.youtube.com/channel/UC_awq0q48rj-SSZQu0Z9PNA"
@@ -142,7 +111,7 @@ export default function Footer() {
                 </ul>
               </div>
 
-              {/* Share (placeholder – can replace later) */}
+              {/* Share */}
               <div>
                 <h3 className="mb-4 text-sm uppercase tracking-widest text-gray-300">
                   Share
@@ -153,20 +122,29 @@ export default function Footer() {
                   coming soon.
                 </p>
               </div>
+
+              {/* Legal Section */}
+              <div>
+                <h3 className="mb-4 text-sm uppercase tracking-widest text-gray-300">
+                  Legal
+                </h3>
+                <ul className="space-y-2">
+                  <li>
+                    <a href="/privacy" className="footer-link">
+                      Privacy Policy
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/impressum" className="footer-link">
+                      Impressum
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
 
             {/* Bottom bar */}
-            <div
-              className="
-            mt-16
-            pt-6
-            border-t
-            border-white/20
-            text-center
-            text-sm
-            text-gray-400
-          "
-            >
+            <div className="mt-16 pt-6 border-t border-white/20 text-center text-sm text-gray-400">
               © 2026 D-DUST.ART
             </div>
           </div>

@@ -238,6 +238,13 @@ export default function Newsletter() {
             </motion.p>
           </div>
         </form>
+        <p className="text-xs text-gray-400 mt-3">
+          By subscribing you agree to the{" "}
+          <a href="/privacy" className="underline hover:text-dust-orange">
+            Privacy Policy
+          </a>
+          .
+        </p>
       </div>
     </section>
   );

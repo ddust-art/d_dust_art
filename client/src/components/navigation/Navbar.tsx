@@ -91,7 +91,11 @@ export function Navbar() {
     // Anchor link
     if (item.anchor) {
       return (
-        <a href={`/#${item.anchor}`} className={`${baseLink} ${inactiveClass}`}>
+        <a
+          key={item.label}
+          href={`/#${item.anchor}`}
+          className={`${baseLink} ${inactiveClass}`}
+        >
           {item.label}
         </a>
       );
@@ -184,7 +188,7 @@ export function Navbar() {
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8 ">
-            {navigation.map(renderItem)}
+            {navigation.map((item) => renderItem(item))}
           </nav>
           {/* Mobile trigger */}
           <button

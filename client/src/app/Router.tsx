@@ -6,6 +6,8 @@ import ImageGallery from "@/pages/ImageGallery";
 import NFTS from "@/pages/NFT/NFTS";
 import Projects from "@/pages/Projects/Projects";
 import NewsletterConfirmed from "@/pages/NewsletterConfirmed";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import Impressum from "@/pages/Impressum";
 
 export function AppRouter() {
   return (
@@ -17,6 +19,8 @@ export function AppRouter() {
       <Route path="/nft" element={<NFTS />} />
       <Route path="/image-gallery" element={<ImageGallery />} />
       <Route path="/newsletter-confirmed" element={<NewsletterConfirmed />} />
+      <Route path="/privacy" element={<PrivacyPolicy />} />
+      <Route path="/impressum" element={<Impressum />} />
     </Routes>
   );
 }

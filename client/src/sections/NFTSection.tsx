@@ -41,7 +41,7 @@ export default function NFTs() {
 
           {/* CTA */}
           <a
-            href="#"
+            href="/nft"
             className="
               inline-flex
               items-center

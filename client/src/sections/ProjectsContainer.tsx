@@ -17,7 +17,7 @@ export default function ProjectsContainer() {
         <div className="relative z-10 inset-0 bg-black/40 backdrop-blur-sm rounded-md m-12">
           {/* Intro Text */}
           <div className="relative max-w-5xl mx-auto px-6 py-12 text-white">
-            <p className="mt-6 text-white/80 text-lg leading-relaxed text-left text-justify">
+            <p className="mt-6 text-white/80 text-lg leading-relaxed text-justify">
               The following works are urban art projects carried out in public
               spaces or within abandoned and/or decaying buildings. Due to the
               flexibility that light offers in transitioning between different
@@ -35,7 +35,7 @@ export default function ProjectsContainer() {
       {/* Projects Grid */}
       {/* Moving Stills */}
       <section id="moving-stills" className="w-full bg-nft-dark-blue">
-        <div className="max-w-6xl mx-auto px-6 pt-24 pb-12 md:pt-32 pb-16 space-y-40">
+        <div className="max-w-6xl mx-auto px-6 pt-24 pb-12 md:pt-32 md:pb-16 space-y-40">
           <article>
             {/* Title + Year */}
             <div>
@@ -119,7 +119,7 @@ export default function ProjectsContainer() {
       </section>
       {/* Outer-Act */}
       <section id="outer-act" className="w-full bg-nft-dark-blue">
-        <div className="max-w-6xl mx-auto px-6 pt-12 pb-12 md:pt-16 pb-16 space-y-40">
+        <div className="max-w-6xl mx-auto px-6 pt-12 pb-12 md:pt-16 md:pb-16 space-y-40">
           <article>
             {/* Title + Year */}
             <div>
@@ -204,7 +204,7 @@ export default function ProjectsContainer() {
       </section>
       {/* MayDay Berlin */}
       <section id="mayday" className="w-full bg-nft-dark-blue">
-        <div className="max-w-6xl mx-auto px-6 pt-12 pb-12 md:pt-16 pb-16 space-y-40">
+        <div className="max-w-6xl mx-auto px-6 pt-12 pb-12 md:pt-16 md:pb-16 space-y-40">
           <article>
             {/* Title + Year */}
             <div>
@@ -277,7 +277,7 @@ export default function ProjectsContainer() {
       </section>
       {/* Street VJ */}
       <section id="street-vj" className="w-full bg-nft-dark-blue">
-        <div className="max-w-6xl mx-auto px-6 pt-12 pb-12 md:pt-16 pb-16 space-y-40">
+        <div className="max-w-6xl mx-auto px-6 pt-12 pb-12 md:pt-16 md:pb-16 space-y-40">
           <article>
             {/* Title + Year */}
             <div>
@@ -342,7 +342,6 @@ export default function ProjectsContainer() {
                   className="w-full h-full"
                   src="https://player.vimeo.com/video/1166457936?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
                   title="MayDay Berlin"
-                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
@@ -353,7 +352,7 @@ export default function ProjectsContainer() {
       </section>
       {/* Funkhaus Mapping */}
       <section id="funkhaus-mapping" className="w-full bg-nft-dark-blue">
-        <div className="max-w-6xl mx-auto px-6 pt-12 pb-12 md:pt-16 pb-16 space-y-40">
+        <div className="max-w-6xl mx-auto px-6 pt-12 pb-12 md:pt-16 md:pb-16 space-y-40">
           <article>
             {/* Title + Year */}
             <div>
