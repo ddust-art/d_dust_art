@@ -12,6 +12,7 @@ app.use(express.json());
 
 const BREVO_API = "https://api.brevo.com/v3/contacts/doubleOptinConfirmation";
 const API_KEY = process.env.BREVO_API_KEY;
+const PORT = process.env.PORT || 3001;
 
 app.post("/api/subscribe", async (req, res) => {
   const { email, fname, lname, inst, type } = req.body;
@@ -30,7 +31,7 @@ app.post("/api/subscribe", async (req, res) => {
 
         includeListIds: [2], //Brevo's newsletter list ID
         templateId: 1,
-        redirectionUrl: "http://localhost:5173/newsletter-confirmed",
+        redirectionUrl: process.env.REDIRECT_URL,
         updateEnabled: true,
       },
       {
@@ -48,6 +49,12 @@ app.post("/api/subscribe", async (req, res) => {
   }
 });
 
-app.listen(3001, () => {
-  console.log("Newsletter API running".bgGreen.bold);
+app.get("/api/health", (req, res) => {
+  //Small improvement for debugging to test if api is working
+  res.json({ status: "ok" });
+});
+
+app.listen(PORT, "0.0.0.0", () => {
+  //0.0.0.0 means: “Accept connections from outside the docker's container.”
+  console.log(`Newsletter API running on ${PORT}`.bgGreen.bold);
 });
