@@ -7,7 +7,7 @@ export default function ProjectsContainer() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/src/assets/image/Projects_bg_intro.jpg"
+            src="/image/Projects_bg_intro.jpg"
             alt="Project cover"
             className="w-full h-full object-cover"
           />
@@ -52,7 +52,7 @@ export default function ProjectsContainer() {
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
               <div>
                 <img
-                  src="src/assets/image/Project_Moving_Stills_image.jpg"
+                  src="/image/Project_Moving_Stills_image.jpg"
                   alt="Project image"
                   className="w-full h-auto"
                 />
@@ -136,7 +136,7 @@ export default function ProjectsContainer() {
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
               <div>
                 <img
-                  src="src/assets/image/Projects_Outer-Act_4-3.webp"
+                  src="/image/Projects_Outer-Act_4-3.webp"
                   alt="Project image"
                   className="w-full h-auto"
                 />
@@ -221,7 +221,7 @@ export default function ProjectsContainer() {
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
               <div>
                 <img
-                  src="src/assets/image/Projects_1_Mai.jpg"
+                  src="/image/Projects_1_Mai.jpg"
                   alt="Project image"
                   className="w-full h-auto"
                 />
@@ -294,7 +294,7 @@ export default function ProjectsContainer() {
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
               <div>
                 <img
-                  src="src/assets/image/Projects_Street VJ_centered.webp"
+                  src="/image/Projects_Street VJ_centered.webp"
                   alt="Project Street VJ"
                   className="w-full h-auto"
                 />
@@ -369,7 +369,7 @@ export default function ProjectsContainer() {
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
               <div>
                 <img
-                  src="src/assets/image/Projects_Funkhaus.webp"
+                  src="/image/Projects_Funkhaus.webp"
                   alt="Project Funkhaus Mapping"
                   className="w-full h-auto"
                 />

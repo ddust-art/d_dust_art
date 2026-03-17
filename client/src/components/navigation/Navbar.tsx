@@ -4,7 +4,6 @@ import { NavLink, useLocation } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import { MobileMenu } from "./MobileMenu";
 import { Menu } from "lucide-react";
-import logo from "@/assets/vector/DDUST Digital Street_LOGO_White.svg";
 import { motion } from "framer-motion";
 
 export function Navbar() {
@@ -178,7 +177,7 @@ export function Navbar() {
           {/* Logo */}
           <NavLink to="/" className={"relative z-20 mr-8"}>
             <motion.img
-              src={logo}
+              src="/vector/DDUST Digital Street_LOGO_White.svg"
               alt="D-DUST Logo"
               className="w-auto origin-left"
               animate={{ height: scrolled ? logoCollapsed : logoExpanded }}

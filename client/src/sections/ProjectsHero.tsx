@@ -9,7 +9,7 @@ export default function ProjectsHero() {
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="/src/assets/video/projects-header.mp4" type="video/mp4" />
+        <source src="/video/projects-header.mp4" type="video/mp4" />
       </video>
 
       {/* Overlay gradient (subtle cinematic fade) */}

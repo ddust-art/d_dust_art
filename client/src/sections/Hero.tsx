@@ -1,7 +1,6 @@
 import { ChevronsDown } from "lucide-react";
 import { motion } from "framer-motion";
 import TypewriterText from "@/components/animations/TypewriterText";
-import heroPoster from "@/assets/image/hero-poster.jpg";
 
 export default function Hero() {
   const handleScrollClick = () => {
@@ -19,24 +18,24 @@ export default function Hero() {
         muted
         playsInline
         preload="metadata"
-        poster={heroPoster}
+        poster="/image/hero-poster.jpg"
       >
         {/* Mobile first */}
         <source
-          src="/src/assets/video/hero-mobile.webm"
+          src="/video/hero-mobile.webm"
           type="video/webm"
           media="(max-width: 768px)"
         />
 
         {/* Desktop */}
         <source
-          src="/src/assets/video/hero-desktop.webm"
+          src="/video/hero-desktop.webm"
           type="video/webm"
           media="(min-width: 769px)"
         />
 
         {/* Fallback - Safari */}
-        <source src="/src/assets/video/hero-fallback.mp4" type="video/mp4" />
+        <source src="/video/hero-fallback.mp4" type="video/mp4" />
       </video>
 
       {/* Overlay for contrast */}

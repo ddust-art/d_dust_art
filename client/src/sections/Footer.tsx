@@ -6,7 +6,7 @@ export default function Footer() {
     >
       {/* Background image */}
       <div
-        className="absolute inset-0 bg-[url('@/assets/image/bg_footer.jpg')] bg-cover bg-center"
+        className="absolute inset-0 bg-[url('/image/bg_footer.jpg')] bg-cover bg-center"
         aria-hidden="true"
       />
 

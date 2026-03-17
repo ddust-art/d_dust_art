@@ -9,7 +9,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import galleryCover from "@/assets/image/gallery/gallery-cover.jpg";
 import GallerySection from "@/components/gallery/GallerySection";
 
 import { images1, images2, images3 } from "@/data/imageGalleries";
@@ -30,7 +29,7 @@ export default function ImageGallery() {
       {/* HEADER */}
       <div className="relative h-[60vh] w-full">
         <img
-          src={galleryCover}
+          src="/image/gallery/gallery-cover.jpg"
           alt="Gallery Cover"
           className="absolute inset-0 w-full h-full object-cover brightness-50"
         />

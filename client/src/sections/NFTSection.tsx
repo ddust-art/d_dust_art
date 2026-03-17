@@ -19,7 +19,7 @@ export default function NFTs() {
           max-w-full
           mx-auto
           p-6
-          bg-[url('@/assets/image/NFTsection_BG_Pic.webp')]
+          bg-[url('/image/NFTsection_BG_Pic.webp')]
           bg-no-repeat
           bg-center
           bg-contain

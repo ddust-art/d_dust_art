@@ -69,7 +69,7 @@ export default function Projects() {
             <CarouselItem className="md:basis-1/2 lg:basis-1/3 basis-full">
               <a href="/projects#outer-act" className="block relative group">
                 <img
-                  src="src/assets/image/Card_01_MSI_V3.jpg"
+                  src="/image/Card_01_MSI_V3.jpg"
                   alt="Project Outer-Act"
                   className="w-full aspect-[4/3] object-cover grayscale transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-[1.03] active:grayscale-0 
 
@@ -79,7 +79,7 @@ export default function Projects() {
                 {/* SVG Title */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <img
-                    src="src/assets/vector/Outer-Act_Logo_GREEN_WEB.svg"
+                    src="/vector/Outer-Act_Logo_GREEN_WEB.svg"
                     alt="Logo Outer-Act"
                     className="w-4/5"
                   />
@@ -93,7 +93,7 @@ export default function Projects() {
                 className="block relative group"
               >
                 <img
-                  src="src/assets/image/Project_Moving_Stills_image.jpg"
+                  src="/image/Project_Moving_Stills_image.jpg"
                   alt="Project Moving Stills"
                   className="w-full aspect-[4/3] object-cover grayscale transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-[1.03] active:grayscale-0"
                 />
@@ -101,7 +101,7 @@ export default function Projects() {
                 {/* SVG Title */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <img
-                    src="src/assets/image/Projects_Moving Stills_Title.png"
+                    src="/image/Projects_Moving Stills_Title.png"
                     alt="Logo Outer-Act"
                     className="w-full"
                   />
@@ -112,7 +112,7 @@ export default function Projects() {
             <CarouselItem className="md:basis-1/2 lg:basis-1/3 basis-full">
               <a href="/projects#mayday" className="block relative group">
                 <img
-                  src="src/assets/image/Projects_1_Mai.jpg"
+                  src="/image/Projects_1_Mai.jpg"
                   alt="Project MayDay"
                   className="w-full aspect-[4/3] object-cover grayscale transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-[1.03] active:grayscale-0"
                 />
@@ -120,7 +120,7 @@ export default function Projects() {
                 {/* SVG Title */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <img
-                    src="src/assets/vector/Projects_1 May_Title.svg"
+                    src="/vector/Projects_1 May_Title.svg"
                     alt="Logo Outer-Act"
                     className="w-full"
                   />
@@ -131,7 +131,7 @@ export default function Projects() {
             <CarouselItem className="md:basis-1/2 lg:basis-1/3 basis-full">
               <a href="/projects#street-vj" className="block relative group">
                 <img
-                  src="src/assets/image/Projects_Street_VJ.webp"
+                  src="/image/Projects_Street_VJ.webp"
                   alt="Project Street-VJ"
                   className="w-full aspect-[4/3] object-cover grayscale transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-[1.03] active:grayscale-0"
                 />
@@ -139,7 +139,7 @@ export default function Projects() {
                 {/* SVG Title */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <img
-                    src="src/assets/image/Projects_Street_VJ_Title.webp"
+                    src="/image/Projects_Street_VJ_Title.webp"
                     alt="Logo Outer-Act"
                     className="w-full"
                   />
@@ -153,7 +153,7 @@ export default function Projects() {
                 className="block relative group"
               >
                 <img
-                  src="src/assets/image/Projects_Funkhaus.webp"
+                  src="/image/Projects_Funkhaus.webp"
                   alt="Project Funkhaus Mapping"
                   className="w-full aspect-[4/3] object-cover grayscale transition-all duration-700 ease-out group-hover:grayscale-0 group-hover:scale-[1.03] active:grayscale-0"
                 />
@@ -161,7 +161,7 @@ export default function Projects() {
                 {/* SVG Title */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <img
-                    src="src/assets/image/Projects_Funkhaus_Title.webp"
+                    src="/image/Projects_Funkhaus_Title.webp"
                     alt="Logo Outer-Act"
                     className="w-full"
                   />

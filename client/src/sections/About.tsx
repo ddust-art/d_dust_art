@@ -1,8 +1,3 @@
-import aboutVideoWebm from "@/assets/video/about_dust.webm";
-import aboutVideoMp4 from "@/assets/video/about-fallback.mp4";
-import aboutPoster from "@/assets/image/about-dust-poster.jpg"; // fallback poster
-import aboutImage from "@/assets/image/ddust_about.jpg";
-
 export default function About() {
   return (
     <section id="about" className="relative w-full py-24 text-white">
@@ -14,10 +9,10 @@ export default function About() {
           loop
           muted
           playsInline
-          poster={aboutPoster}
+          poster="/image/about-dust-poster.jpg"
         >
-          <source src={aboutVideoWebm} type="video/webm" />
-          <source src={aboutVideoMp4} type="video/mp4" />
+          <source src="/video/about_dust.webm" type="video/webm" />
+          <source src="/video/about-fallback.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/20"></div>
       </div>
@@ -31,7 +26,7 @@ export default function About() {
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start px-12">
         {/* Left: image */}
         <img
-          src={aboutImage}
+          src="/image/ddust_about.jpg"
           alt="D-DUST artistic portrait"
           className="w-full rounded-lg object-cover shadow-xl"
           loading="lazy"
