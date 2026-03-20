@@ -40,7 +40,7 @@ export default function ImageGallery() {
         </div>
       </div>
       {/* INTRO TEXT */}
-      <section className="max-w-4xl mx-auto px-6 py-16 text-left text-justify">
+      <section className="max-w-4xl mx-auto px-6 py-16 text-justify">
         <p className="text-white/70 leading-relaxed text-lg">
           <strong className="font-semibold text-2xl text-dust-orange">
             Public spaces

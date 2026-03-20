@@ -19,7 +19,7 @@ export default function Newsletter() {
     setStatus("");
 
     try {
-      const res = await fetch("http://localhost:3001/api/subscribe", {
+      const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

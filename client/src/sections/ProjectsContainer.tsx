@@ -306,7 +306,7 @@ export default function ProjectsContainer() {
                   projecting onto its gray buildings. In the image, a hooded
                   character tags the walls with luminous{" "}
                   <a
-                    href="https://ionee.io"
+                    href="https://en.wikipedia.org/wiki/Picha%C3%A7%C3%A3o"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-light-purple underline hover:opacity-80 transition-opacity"
