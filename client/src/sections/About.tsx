@@ -18,8 +18,8 @@ export default function About() {
       </div>
 
       {/* Section heading */}
-      <h2 className="text-center text-dust-orange text-4xl font-bold uppercase mb-12">
-        About
+      <h2 className="text-center text-tech-green text-4xl font-bold uppercase mb-12">
+        About D-DUST
       </h2>
 
       {/* Two-column layout */}
