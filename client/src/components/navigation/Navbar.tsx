@@ -19,7 +19,6 @@ export function Navbar() {
       setScrolled(window.scrollY > 40);
     };
 
-    onScroll(); // run once on mount
     window.addEventListener("scroll", onScroll);
     return () => {
       window.removeEventListener("scroll", onScroll);
@@ -48,11 +47,6 @@ export function Navbar() {
   const baseLink = "font-medium transition-colors duration-200";
   const inactiveClass = "text-white/60 hover:text-dust-orange";
   const activeClass = "text-light-purple hover:text-dust-orange";
-
-  //Detect Desktop vc Mobile
-  const isDesktop = window.matchMedia("(min-width: 768px)").matches;
-  const logoExpanded = isDesktop ? 80 : 48;
-  const logoCollapsed = isDesktop ? 48 : 40;
 
   const renderItem = (item: NavItem) => {
     // Dropdown Parent
@@ -176,12 +170,13 @@ export function Navbar() {
         >
           {/* Logo */}
           <NavLink to="/" className={"relative z-20 mr-8"}>
-            <motion.img
+            <img
               src="/vector/DDUST Digital Street_LOGO_White.svg"
               alt="D-DUST Logo"
-              className="w-auto origin-left"
-              animate={{ height: scrolled ? logoCollapsed : logoExpanded }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
+              className={`
+                w-auto origin-left transition-all duration-300
+                ${scrolled ? "h-10 md:h-12" : "h-12 md:h-20"}
+              `}
             />
           </NavLink>
 
