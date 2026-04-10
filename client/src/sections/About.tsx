@@ -19,7 +19,7 @@ export default function About() {
 
       {/* Section heading */}
       <h2 className="text-center text-tech-green text-4xl font-bold uppercase mb-12">
-        About D-DUST
+        About
       </h2>
 
       {/* Two-column layout */}
