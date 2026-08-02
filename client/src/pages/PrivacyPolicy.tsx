@@ -31,7 +31,7 @@ export default function PrivacyPolicy() {
             </h2>
             <p>Responsible for data processing on this website:</p>
             <p className="mt-2">
-              D Dust <br />
+              Diogo Favato <br />
               Email: ddust.video@gmail.com
             </p>
           </div>
