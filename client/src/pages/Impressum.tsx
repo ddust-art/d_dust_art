@@ -15,9 +15,13 @@ export default function Impressum() {
             </h2>
 
             <p>
-              D Dust
+              Diogo Favato: Visuelle Produktionen
               <br />
-              Berlin, Germany
+              Emser Str. 80
+              <br />
+              12051
+              <br />
+              Germany
             </p>
           </div>
 
